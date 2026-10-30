@@ -1,136 +1,121 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prénom Nom – Portfolio</title>
-  <meta name="description" content="Portfolio de Prénom Nom, développeur web.">
-  <style>
-    :root {
-      --bg: #f5f6f3;
-      --text: #1c2630;
-      --muted: #5b6770;
-      --accent: #2a5d8f;
-      --line: #d9ddd8;
-      color-scheme: light dark;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #14191e;
-        --text: #e8ecef;
-        --muted: #9aa5ad;
-        --accent: #7db2e3;
-        --line: #2b343b;
-      }
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
-    }
-    a { color: var(--accent); }
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
-
-    header { border-bottom: 1px solid var(--line); }
-    header .wrap {
-      display: flex; justify-content: space-between; align-items: center;
-      padding-top: 1rem; padding-bottom: 1rem;
-    }
-    header strong { font-size: 1.05rem; }
-    nav a { margin-left: 1.25rem; text-decoration: none; color: var(--muted); }
-    nav a:hover { color: var(--accent); }
-
-    .hero { padding: 5rem 0 3.5rem; }
-    .hero h1 { font-size: clamp(2.2rem, 7vw, 3.5rem); line-height: 1.1; margin: 0 0 1rem; }
-    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 34rem; margin: 0 0 1.5rem; }
-    .btn {
-      display: inline-block; padding: .65rem 1.2rem; border-radius: 6px;
-      background: var(--accent); color: var(--bg); text-decoration: none; font-weight: 600;
-    }
-
-    section { padding: 2.5rem 0; border-top: 1px solid var(--line); }
-    h2 { font-size: 1.5rem; margin: 0 0 1.25rem; }
-
-    .project { padding: 1rem 0; }
-    .project + .project { border-top: 1px solid var(--line); }
-    .project h3 { margin: 0 0 .25rem; font-size: 1.1rem; }
-    .project p { margin: 0 0 .4rem; color: var(--muted); }
-
-    footer { padding: 2rem 0 3rem; color: var(--muted); font-size: .9rem; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kwernelle – Portfolio</title>
+<meta name="description" content="Portfolio de Kwernelle, développeur web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffc98b;--dk:#03171b;--ac:#ffc98b;--wh:#fff}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--dk);font:400 1.05rem/1.7 Rubik,system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+.w{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.hero{background:var(--dk);color:var(--wh);border-radius:0 0 2.5rem 2.5rem;padding-bottom:7rem}
+.bar{display:flex;align-items:center;gap:2rem;padding-top:2rem}
+.logo{background:var(--wh);color:var(--dk);border-radius:.6rem;padding:.7rem .9rem;font-weight:800;line-height:1.1;text-transform:uppercase;text-decoration:none;font-size:1.05rem}
+.logo span{display:block;font-weight:400}
+.bar nav{display:flex;gap:2rem;margin-right:auto}
+.bar nav a{font-weight:800;text-transform:uppercase;text-decoration:none}
+.bar nav a:hover{color:var(--ac)}
+.btn{display:inline-block;background:var(--ac);color:var(--dk);font-weight:800;text-transform:uppercase;text-decoration:none;padding:.7rem 1.1rem;border-radius:.8rem;line-height:1.3;transition:background .2s}
+.btn:hover{background:var(--wh)}
+h1,h2{font-weight:800;text-transform:uppercase;line-height:1.05}
+h1{color:var(--ac);font-size:clamp(2.4rem,7vw,5rem);max-width:15ch;margin-top:6rem}
+.hero p{max-width:34rem;margin:1.5rem 0 2rem;font-size:1.15rem}
+main{margin-top:-4rem}
+.apropos{background:var(--dk);color:var(--wh);border-radius:1.5rem 1.5rem 1.5rem 0;padding:2.5rem;max-width:760px;margin-left:auto}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:1rem}
+.apropos h2,.contact h2{color:var(--ac)}
+.apropos p+p{margin-top:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin-top:1.5rem}
+.tags li{border:2px solid var(--ac);color:var(--ac);border-radius:.8rem;padding:.2rem .8rem;font-weight:500}
+#projets{padding:5rem 0 4rem}
+.liste{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem}
+.proj{background:var(--dk);color:var(--wh);border-radius:1.5rem;padding:1.75rem;display:flex;flex-direction:column;gap:.75rem}
+.proj h3{color:var(--ac);font-size:1.4rem;font-weight:800;text-transform:uppercase;line-height:1.1}
+.proj p{flex:1}
+.proj .btn{align-self:flex-start}
+.contact{background:var(--dk);color:var(--wh);border-radius:2.5rem 2.5rem 0 0;padding:4rem 0 3rem}
+.contact p{max-width:32rem;margin-bottom:1.5rem}
+.liens{display:flex;flex-wrap:wrap;gap:1rem}
+footer{font-size:.9rem;margin-top:3rem;opacity:.7}
+@media(max-width:720px){.bar nav{display:none}.bar{justify-content:space-between}h1{margin-top:4rem}.apropos{padding:1.75rem}}
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="wrap">
-      <strong>Prénom Nom</strong>
+<header class="hero">
+  <div class="w">
+    <div class="bar">
+      <a class="logo" href="#">Kwernelle<span>Portfolio</span></a>
       <nav>
         <a href="#projets">Projets</a>
         <a href="#apropos">À propos</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a class="btn" href="#contact">Me contacter</a>
     </div>
-  </header>
+    <h1>Je crée des sites clairs et rapides</h1>
+    <p>Développeur web en formation. J'aime les interfaces simples, bien rangées et agréables à utiliser.</p>
+    <a class="btn" href="#projets">Voir mes projets</a>
+  </div>
+</header>
 
-  <main class="wrap">
+<main>
+  <div class="w">
+    <section class="apropos" id="apropos">
+      <h2>Bienvenue sur mon portfolio</h2>
+      <p>Je m'appelle Kwernelle et j'apprends le développement web. Ici, tu trouveras ce que j'ai construit jusqu'à présent.</p>
+      <p>Je cherche un stage ou une alternance pour continuer à progresser sur de vrais projets.</p>
+      <ul class="tags">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Git</li>
+      </ul>
+    </section>
 
-    <!-- Accueil : remplace par ton nom et une phrase qui te décrit -->
-    <div class="hero">
-      <h1>Salut, je suis Prénom, développeur web.</h1>
-      <p>Je crée des sites simples, rapides et accessibles. Voici quelques-uns de mes projets.</p>
-      <a class="btn" href="#projets">Voir mes projets</a>
-    </div>
-
-    <!-- Projets : duplique un bloc <div class="project"> pour en ajouter -->
     <section id="projets">
-      <h2>Projets</h2>
-
-      <div class="project">
-        <h3>Nom du projet 1</h3>
-        <p>Une phrase pour dire ce que fait le projet et quelles technologies tu as utilisées.</p>
-        <a href="https://github.com/ton-pseudo/projet-1">Code sur GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>Nom du projet 2</h3>
-        <p>Une phrase pour dire ce que fait le projet et quelles technologies tu as utilisées.</p>
-        <a href="https://github.com/ton-pseudo/projet-2">Code sur GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>Nom du projet 3</h3>
-        <p>Une phrase pour dire ce que fait le projet et quelles technologies tu as utilisées.</p>
-        <a href="https://github.com/ton-pseudo/projet-3">Code sur GitHub</a>
+      <h2>Mes projets</h2>
+      <div class="liste">
+        <article class="proj">
+          <h3>Projet un</h3>
+          <p>Une phrase pour expliquer ce que fait ce projet et les outils utilisés.</p>
+          <a class="btn" href="https://github.com/kwernelle">Voir le code</a>
+        </article>
+        <article class="proj">
+          <h3>Projet deux</h3>
+          <p>Une phrase pour expliquer ce que fait ce projet et les outils utilisés.</p>
+          <a class="btn" href="https://github.com/kwernelle">Voir le code</a>
+        </article>
+        <article class="proj">
+          <h3>Projet trois</h3>
+          <p>Une phrase pour expliquer ce que fait ce projet et les outils utilisés.</p>
+          <a class="btn" href="https://github.com/kwernelle">Voir le code</a>
+        </article>
       </div>
     </section>
+  </div>
+</main>
 
-    <!-- À propos : quelques lignes sur toi et tes compétences -->
-    <section id="apropos">
-      <h2>À propos</h2>
-      <p>Présente-toi en deux ou trois phrases : ton parcours, ce que tu apprends en ce moment, ce que tu cherches (stage, alternance, emploi, freelance).</p>
-      <p>Compétences : HTML, CSS, JavaScript, Git.</p>
-    </section>
-
-    <!-- Contact : remplace par tes vraies coordonnées -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Écris-moi à <a href="mailto:ton.email@exemple.fr">ton.email@exemple.fr</a>,
-        ou retrouve-moi sur <a href="https://github.com/ton-pseudo">GitHub</a>
-        et <a href="https://www.linkedin.com/in/ton-profil">LinkedIn</a>.
-      </p>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="wrap">© 2026 Prénom Nom</div>
-  </footer>
+<section class="contact" id="contact">
+  <div class="w">
+    <h2>On discute ?</h2>
+    <p>Une question, une idée, une offre de stage ? Écris-moi, je réponds vite.</p>
+    <div class="liens">
+      <a class="btn" href="mailto:ton.email@exemple.fr">Envoyer un mail</a>
+      <a class="btn" href="https://github.com/kwernelle">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/ton-profil">LinkedIn</a>
+    </div>
+    <footer>© 2026 Kwernelle</footer>
+  </div>
+</section>
 
 </body>
 </html>

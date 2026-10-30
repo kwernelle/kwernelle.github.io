@@ -84,14 +84,38 @@ h1{font-weight:500;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.05;letter-sp
 .sk:hover{transform:translateY(-4px) rotate(-2deg)}
 .sk img{width:1.8rem;height:1.8rem;object-fit:contain}
 
+[hidden]{display:none!important}
 #projets{padding:var(--s) 0}
-.liste{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2.25rem}
-.proj{border:1px solid var(--wh);border-radius:1.75rem;padding:2rem;display:flex;flex-direction:column;gap:.9rem;box-shadow:0 20px 40px -24px rgba(11,31,74,.35);transition:transform .3s,box-shadow .3s}
+.ph{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.25rem}
+.ph h2{margin:0}
+.fl{display:flex;gap:.25rem;padding:.35rem;border-radius:999px;border:1px solid var(--wh);background:var(--gl);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.f{font:inherit;color:var(--dk);background:none;border:0;cursor:pointer;padding:.45rem 1.1rem;border-radius:999px;transition:background .2s,color .2s}
+.f:hover{background:rgba(255,255,255,.85)}
+.f[aria-pressed=true]{background:var(--dk);color:var(--wh)}
+.liste{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.5rem;margin-top:2.25rem}
+.proj{border:1px solid var(--wh);border-radius:2rem;padding:.75rem .75rem 1.75rem;display:flex;flex-direction:column;gap:1.1rem;box-shadow:0 20px 40px -24px rgba(11,31,74,.35);transition:transform .3s,box-shadow .3s}
 .proj:hover{transform:translateY(-8px);box-shadow:0 34px 50px -24px rgba(11,31,74,.45)}
+.pv{position:relative;aspect-ratio:16/10;border-radius:1.4rem;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 15% 115%,rgba(255,255,255,.75),transparent 55%),var(--g)}
+.pv::before{content:"";position:absolute;left:1rem;top:1rem;width:.6rem;height:.6rem;border-radius:50%;background:rgba(255,255,255,.95);box-shadow:1rem 0 rgba(255,255,255,.65),2rem 0 rgba(255,255,255,.4)}
+.cat{position:absolute;right:.9rem;top:.75rem;background:rgba(255,255,255,.85);border-radius:999px;padding:.05rem .85rem;font-size:.85rem;font-weight:500}
+.big{width:5.4rem;height:5.4rem;display:grid;place-items:center;background:var(--wh);border-radius:1.5rem;box-shadow:0 6px 0 #c3d3e6,0 24px 30px -10px rgba(11,31,74,.4);transform:rotate(-6deg);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.big img{width:58%;height:58%;object-fit:contain}
+.proj:hover .big{transform:rotate(3deg) translateY(-8px) scale(1.1)}
+.pb{padding:0 1.1rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
 .proj h3{font-size:1.35rem;font-weight:800;text-transform:uppercase;line-height:1.1}
-.proj p{flex:1;margin-bottom:.5rem}
-.proj .btn{align-self:flex-start;background:var(--dk);color:var(--wh)}
+.proj p{flex:1}
+.proj .ch{gap:.45rem}
+.proj .sk{font-size:.85rem;padding:.2rem .8rem .2rem .3rem;gap:.4rem}
+.proj .sk img{width:1.3rem;height:1.3rem}
+.bt{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.25rem}
+.proj .btn{background:var(--dk);color:var(--wh)}
 .proj .btn:hover{background:var(--ac);color:var(--dk)}
+.proj .btn.g{background:transparent;color:var(--dk);box-shadow:inset 0 0 0 2px rgba(11,31,74,.25)}
+.proj .btn.g:hover{background:var(--ac);box-shadow:none}
+.more{border:2px dashed rgba(11,31,74,.3);border-radius:2rem;display:grid;place-content:center;justify-items:center;gap:.7rem;text-align:center;padding:2rem;min-height:18rem;text-decoration:none;transition:border-color .3s,background .3s,transform .3s}
+.more:hover{border-color:var(--ac);background:rgba(255,255,255,.6);transform:translateY(-8px)}
+.more .k{width:4.5rem;font-size:1.8rem}
+.more b{font-size:1.2rem;font-weight:800;text-transform:uppercase;line-height:1.1}
 
 .contact{background:var(--dk);color:var(--wh);border-radius:2.5rem 2.5rem 0 0;padding:var(--s) 0 3rem}
 .contact p{max-width:32rem;margin-bottom:2rem}
@@ -115,6 +139,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:3px;background:var(
 .bento>.t:nth-child(6){--d:.1s}
 .proj:nth-child(2){--d:.12s}
 .proj:nth-child(3){--d:.24s}
+.more{--d:.36s}
 .contact p{--d:.1s}
 .liens{--d:.2s}
 @keyframes pu{50%{box-shadow:0 0 0 .55rem rgba(94,200,255,0)}0%{box-shadow:0 0 0 0 rgba(94,200,255,.6)}}
@@ -215,23 +240,44 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
   </section>
 
   <section id="projets">
-    <h2 class="r">Mes projets</h2>
+    <div class="ph">
+      <h2 class="r">Mes projets</h2>
+      <div class="fl r" role="group" aria-label="Filtrer les projets">
+        <button class="f" data-f="tout" aria-pressed="true">Tout</button>
+        <button class="f" data-f="web" aria-pressed="false">Web</button>
+        <button class="f" data-f="script" aria-pressed="false">Scripts</button>
+        <button class="f" data-f="jeu" aria-pressed="false">Jeux</button>
+      </div>
+    </div>
     <div class="liste">
-      <article class="proj r">
-        <h3>Projet un</h3>
-        <p>Une phrase pour expliquer ce que fait ce projet et les outils utilisés.</p>
-        <a class="btn" href="https://github.com/kwernelle">Voir le code</a>
+      <article class="proj r" data-c="web">
+        <div class="pv" style="--g:linear-gradient(135deg,#7fd3ff,#6f9bff)"><span class="cat">Web</span><span class="big"><img src="img/html.png" alt=""></span></div>
+        <div class="pb">
+          <h3>Projet web</h3>
+          <p>Une phrase pour expliquer ce que fait ce projet et ce que tu y as appris.</p>
+          <div class="ch"><span class="sk"><img src="img/html.png" alt="">HTML</span><span class="sk"><img src="img/css.png" alt="">CSS</span><span class="sk"><img src="img/js.png" alt="">JS</span></div>
+          <div class="bt"><a class="btn" href="https://github.com/kwernelle">Code</a><a class="btn g" href="#">Démo</a></div>
+        </div>
       </article>
-      <article class="proj r">
-        <h3>Projet deux</h3>
-        <p>Une phrase pour expliquer ce que fait ce projet et les outils utilisés.</p>
-        <a class="btn" href="https://github.com/kwernelle">Voir le code</a>
+      <article class="proj r" data-c="script">
+        <div class="pv" style="--g:linear-gradient(135deg,#a9b8ff,#8fd9ff)"><span class="cat">Script</span><span class="big"><img src="img/node.png" alt=""></span></div>
+        <div class="pb">
+          <h3>Projet script</h3>
+          <p>Une phrase pour expliquer ce que fait ce projet et ce que tu y as appris.</p>
+          <div class="ch"><span class="sk"><img src="img/node.png" alt="">Node.js</span><span class="sk"><img src="img/python.png" alt="">Python</span></div>
+          <div class="bt"><a class="btn" href="https://github.com/kwernelle">Code</a><a class="btn g" href="#">Démo</a></div>
+        </div>
       </article>
-      <article class="proj r">
-        <h3>Projet trois</h3>
-        <p>Une phrase pour expliquer ce que fait ce projet et les outils utilisés.</p>
-        <a class="btn" href="https://github.com/kwernelle">Voir le code</a>
+      <article class="proj r" data-c="jeu">
+        <div class="pv" style="--g:linear-gradient(135deg,#5ec8ff,#b8c8ff)"><span class="cat">Jeu</span><span class="big"><img src="img/lua.png" alt=""></span></div>
+        <div class="pb">
+          <h3>Projet jeu</h3>
+          <p>Une phrase pour expliquer ce que fait ce projet et ce que tu y as appris.</p>
+          <div class="ch"><span class="sk"><img src="img/lua.png" alt="">Lua</span><span class="sk"><img src="img/roblox.png" alt="">Roblox</span></div>
+          <div class="bt"><a class="btn" href="https://github.com/kwernelle">Code</a><a class="btn g" href="#">Démo</a></div>
+        </div>
       </article>
+      <a class="more r" href="https://github.com/kwernelle"><span class="k on">+</span><b>D'autres projets arrivent</b><span>Suis-moi sur GitHub</span></a>
     </div>
   </section>
 </main>
@@ -256,6 +302,8 @@ const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target
 d.querySelectorAll('.r').forEach(x=>ro.observe(x))
 const co=new IntersectionObserver(e=>e.forEach(x=>{if(!x.isIntersecting)return;co.unobserve(x.target);const el=x.target,n=el.dataset.c?d.querySelectorAll(el.dataset.c).length:+el.dataset.n;el.textContent=n;if(rm||!n)return;const t0=performance.now(),f=t=>{const k=Math.min(1,(t-t0)/1300);el.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}),{threshold:.6})
 d.querySelectorAll('.num[data-c]').forEach(x=>co.observe(x))
+const fb=[...d.querySelectorAll('.f')],pj=[...d.querySelectorAll('.proj')]
+fb.forEach(b=>b.addEventListener('click',()=>{fb.forEach(x=>x.setAttribute('aria-pressed',x==b));pj.forEach(c=>{const ok=b.dataset.f=='tout'||c.dataset.c==b.dataset.f;c.hidden=!ok;if(ok){c.style.animation='none';void c.offsetWidth;c.style.animation=''}})}))
 const ln=[...d.querySelectorAll('nav a')]
 const so=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)ln.forEach(l=>l.classList.toggle('on',l.hash=='#'+x.target.id))}),{rootMargin:'-45% 0px -50% 0px'})
 d.querySelectorAll('#top,#apropos,#projets,#contact').forEach(x=>so.observe(x))

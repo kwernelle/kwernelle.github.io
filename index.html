@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kwernelle – Portfolio</title>
+<meta name="description" content="Portfolio de Kwernelle, développeur web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f8;--dk:#0c1f33;--lm:#eaff00;--wh:#fff;--gl:rgba(255,255,255,.55)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--dk);font:400 1.05rem/1.7 Rubik,system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid #6b5cff;outline-offset:3px}
+.ap :focus-visible,.contact :focus-visible{outline-color:var(--lm)}
+.w{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+nav,.pill,.proj{background:var(--gl);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+h2{font-weight:800;text-transform:uppercase;line-height:1.05;font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:1rem}
+
+.hero{background:linear-gradient(90deg,rgba(8,40,110,.6),rgba(8,40,110,.05) 55%),linear-gradient(180deg,transparent 78%,var(--bg)),url(img/ciel.jpg) center/cover}
+.hd{padding:1.25rem 0}
+.hd .w{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.logo{color:var(--wh);font-weight:800;font-size:1.25rem;text-decoration:none}
+nav{display:flex;gap:.25rem;padding:.35rem;border-radius:999px;border:1px solid rgba(255,255,255,.6)}
+nav a{padding:.4rem 1rem;border-radius:999px;text-decoration:none;transition:background .2s}
+nav a:hover{background:rgba(255,255,255,.75)}
+.btn{display:inline-block;background:var(--lm);color:var(--dk);font-weight:500;text-decoration:none;padding:.65rem 1.3rem;border-radius:999px;line-height:1.3;transition:background .2s}
+.btn:hover{background:var(--wh)}
+.cta{justify-self:end}
+
+.top{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding-top:3rem}
+h1{color:var(--wh);font-weight:500;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.05;letter-spacing:-.02em;max-width:12ch}
+.top p{justify-self:end;text-align:right;max-width:22rem;font-size:1.1rem;font-weight:500}
+.stage{display:flex;justify-content:center;padding:4.5rem 0 3.5rem}
+.pad{width:min(380px,78vw);padding:1.8rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;border-radius:2.2rem;border:1px solid var(--wh);background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(190,220,255,.5));box-shadow:0 40px 60px -20px rgba(8,40,110,.5),inset 0 -24px 40px rgba(110,255,225,.35);transform:perspective(1000px) rotateX(24deg) rotateY(-24deg) rotateZ(8deg)}
+.k{aspect-ratio:1;display:grid;place-items:center;background:var(--wh);border-radius:1rem;box-shadow:0 5px 0 #c3d3e6,0 12px 16px rgba(8,40,110,.2)}
+.k img{width:58%;height:58%;object-fit:contain}
+.k.on{background:var(--lm);font-weight:800;font-size:1.8rem}
+.go{display:flex;justify-content:center;padding-bottom:6rem}
+.pill{display:inline-flex;align-items:center;gap:.8rem;padding:.5rem .5rem .5rem 1.4rem;border-radius:999px;border:1px solid rgba(255,255,255,.7);text-decoration:none;font-size:1.15rem}
+.pill span{background:var(--lm);padding:.3rem .9rem;border-radius:999px;font-size:.95rem;font-weight:500}
+
+.ap{background:var(--dk);color:var(--wh);border-radius:2rem;padding:3rem;max-width:760px}
+.ap h2,.contact h2{color:var(--lm)}
+.ap p+p{margin-top:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin-top:1.5rem}
+.tags li{border:2px solid var(--lm);color:var(--lm);border-radius:999px;padding:.1rem .9rem;font-weight:500}
+
+#projets{padding:5rem 0 4rem}
+.liste{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem}
+.proj{border:1px solid var(--wh);border-radius:1.75rem;padding:1.75rem;display:flex;flex-direction:column;gap:.75rem;box-shadow:0 20px 40px -24px rgba(20,60,130,.4)}
+.proj h3{font-size:1.35rem;font-weight:800;text-transform:uppercase;line-height:1.1}
+.proj p{flex:1}
+.proj .btn{align-self:flex-start;background:var(--dk);color:var(--wh)}
+.proj .btn:hover{background:var(--lm);color:var(--dk)}
+
+.contact{background:var(--dk);color:var(--wh);border-radius:2.5rem 2.5rem 0 0;padding:4rem 0 3rem}
+.contact p{max-width:32rem;margin-bottom:1.5rem}
+.liens{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn.o{background:transparent;color:var(--wh);box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
+.btn.o:hover{background:var(--lm);color:var(--dk)}
+.btn img{width:1.2rem;height:1.2rem;vertical-align:-.2em;margin-right:.45rem}
+footer{font-size:.9rem;margin-top:3rem;opacity:.7}
+
+@media(max-width:720px){
+.hd .w{grid-template-columns:1fr}
+.logo,.cta{display:none}
+nav{justify-self:center}
+.top{grid-template-columns:1fr}
+.top p{justify-self:start;text-align:left;color:var(--wh)}
+.ap{padding:1.75rem}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hd">
+    <div class="w">
+      <a class="logo" href="#">kwernelle</a>
+      <nav>
+        <a href="#">Accueil</a>
+        <a href="#projets">Projets</a>
+        <a href="#apropos">À propos</a>
+      </nav>
+      <div class="cta"><a class="btn" href="#contact">Me contacter</a></div>
+    </div>
+  </div>
+
+  <div class="w top">
+    <h1>Moins de bla&#8209;bla, plus de code.</h1>
+    <p>Je construis des sites simples, des scripts et des petits jeux. Voici ce que j'ai fait jusqu'ici.</p>
+  </div>
+
+  <div class="stage">
+    <div class="pad">
+      <div class="k"><img src="img/html.png" alt="HTML"></div>
+      <div class="k"><img src="img/css.png" alt="CSS"></div>
+      <div class="k"><img src="img/js.png" alt="JavaScript"></div>
+      <div class="k"><img src="img/node.png" alt="Node.js"></div>
+      <div class="k"><img src="img/python.png" alt="Python"></div>
+      <div class="k"><img src="img/lua.png" alt="Lua"></div>
+      <div class="k"><img src="img/bash.png" alt="Bash"></div>
+      <div class="k"><img src="img/roblox.png" alt="Roblox"></div>
+      <div class="k on">+</div>
+    </div>
+  </div>
+
+  <div class="go">
+    <a class="pill" href="#projets">Voir mes projets <span>dispo pour un stage</span></a>
+  </div>
+</header>
+
+<main class="w">
+  <section class="ap" id="apropos">
+    <h2>Un peu de moi</h2>
+    <p>Je m'appelle Kwernelle et j'apprends le développement. J'aime le web, mais aussi scripter en Lua sur Roblox et bidouiller avec Node.js et Python.</p>
+    <p>Je cherche un stage ou une alternance pour progresser sur de vrais projets, en équipe.</p>
+    <ul class="tags">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Node.js</li>
+      <li>Python</li>
+      <li>Lua</li>
+      <li>Bash</li>
+    </ul>
+  </section>
+
+  <section id="projets">
+    <h2>Mes projets</h2>
+    <div class="liste">
+      <article class="proj">
+        <h3>Projet un</h3>
+        <p>Une phrase pour expliquer ce que fait ce projet et les outils utilisés.</p>
+        <a class="btn" href="https://github.com/kwernelle">Voir le code</a>
+      </article>
+      <article class="proj">
+        <h3>Projet deux</h3>
+        <p>Une phrase pour expliquer ce que fait ce projet et les outils utilisés.</p>
+        <a class="btn" href="https://github.com/kwernelle">Voir le code</a>
+      </article>
+      <article class="proj">
+        <h3>Projet trois</h3>
+        <p>Une phrase pour expliquer ce que fait ce projet et les outils utilisés.</p>
+        <a class="btn" href="https://github.com/kwernelle">Voir le code</a>
+      </article>
+    </div>
+  </section>
+</main>
+
+<section class="contact" id="contact">
+  <div class="w">
+    <h2>On discute ?</h2>
+    <p>Une question, une idée, une offre de stage ? Écris-moi, je réponds vite.</p>
+    <div class="liens">
+      <a class="btn" href="mailto:ton.email@exemple.fr">Envoyer un mail</a>
+      <a class="btn o" href="https://discord.com/users/ton-id"><img src="img/discord.png" alt="">Discord</a>
+      <a class="btn o" href="https://github.com/kwernelle">GitHub</a>
+      <a class="btn o" href="https://www.linkedin.com/in/ton-profil">LinkedIn</a>
+    </div>
+    <footer>© 2026 Kwernelle</footer>
+  </div>
+</section>
+
+</body>
+</html>

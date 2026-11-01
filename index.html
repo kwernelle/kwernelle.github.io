@@ -72,9 +72,6 @@ h1{font-weight:500;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.05;letter-sp
 .s2{grid-column:span 3;background:var(--ac)}
 .s3{background:linear-gradient(135deg,#8fd9ff,#a9b8ff)}
 .s4{grid-column:span 3;background:var(--wh)}
-.s4 b{font-size:1.5rem;line-height:1.2;font-weight:800;text-transform:uppercase}
-.s4 .dot{background:#2a8cf0}
-.s4 a{align-self:flex-start;font-weight:500}
 .sx{grid-column:1/-1;background:var(--gl);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--wh);gap:1.5rem}
 .sx h3{font-size:1.35rem;font-weight:800;text-transform:uppercase;line-height:1.1}
 .gr{display:flex;flex-wrap:wrap;gap:1.75rem 3.5rem}
@@ -109,6 +106,24 @@ h1{font-weight:500;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.05;letter-sp
 .ex:nth-child(3){--d:.1s}
 .ex:nth-child(4){--d:.2s}
 .ex:nth-child(5){--d:.3s}
+.tw{display:flex;justify-content:center;margin-top:2.25rem}
+.tgl{font:inherit;font-weight:500;cursor:pointer;border:0;background:var(--dk);color:var(--wh);border-radius:999px;padding:.75rem 1.5rem;display:inline-flex;align-items:center;gap:.7rem;transition:transform .2s,background .2s,color .2s}
+.tgl:hover{background:var(--ac);color:var(--dk);transform:translateY(-2px)}
+.tgl i{font-style:normal;transition:transform .4s}
+.tgl[aria-expanded=true] i{transform:rotate(180deg)}
+.hid{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s cubic-bezier(.2,.7,.2,1)}
+.hid.open{grid-template-rows:1fr}
+.hi{overflow:hidden;min-height:0}
+.hg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;padding-top:1.5rem}
+.hg .ex{margin:0}
+.ex.dim{background:rgba(255,255,255,.35);border:2px dashed rgba(11,31,74,.25);box-shadow:none;opacity:0}
+.hid.open .ex.dim{animation:up .7s cubic-bezier(.2,.7,.2,1) both;opacity:1}
+.hid.open .ex.dim:nth-child(2){animation-delay:.1s}
+.hid.open .ex.dim:nth-child(3){animation-delay:.2s}
+.ex.dim:hover{transform:none;box-shadow:none}
+.ex.dim .lg{display:grid;place-items:center;background:rgba(11,31,74,.08);box-shadow:none;font-size:1.8rem;font-weight:800;color:rgba(11,31,74,.4)}
+.ex.dim:hover .lg{transform:none}
+.oub{margin-top:1rem;text-align:center;font-weight:500;opacity:.75;border:2px dashed rgba(11,31,74,.25);border-radius:1.75rem;padding:1rem 1.5rem}
 [hidden]{display:none!important}
 #projets{padding:var(--s) 0}
 .ph{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.25rem}
@@ -220,11 +235,11 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
         <div class="k on">+</div>
       </div>
     </div>
-    <p>Je construis des sites simples, des scripts et des petits jeux. Voici ce que j'ai fait jusqu'ici.</p>
+    <p>Je développe depuis dix ans, surtout pour des serveurs de rôleplay. Voici mon parcours et ce que j'ai construit.</p>
   </div>
 
   <div class="go">
-    <a class="pill" href="#projets">Voir mes projets <span>dispo pour un stage</span></a>
+    <a class="pill" href="#projets">Voir mes projets <span>10 ans de dev</span></a>
   </div>
 </header>
 
@@ -234,17 +249,17 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
       <article class="t pf r">
         <div class="hd2">
           <span class="av">K</span>
-          <span class="on2"><i class="dot"></i>Dispo pour un stage</span>
+          <span class="on2">@kwernelle</span>
         </div>
         <h2>Un peu de moi</h2>
-        <p class="sub">Kwernelle, développeur en formation.</p>
-        <p>J'aime comprendre comment les choses marchent, puis les refaire à ma façon. Du web, mais aussi des scripts en Lua sur Roblox, avec un peu de Node.js et de Python pour le reste.</p>
-        <p>Je cherche un stage ou une alternance pour progresser sur de vrais projets, en équipe.</p>
+        <p class="sub">Kwernelle, développeur.</p>
+        <p>J'aime comprendre comment les choses marchent, puis les refaire à ma façon. Je développe depuis dix ans, surtout pour des serveurs de rôleplay sur FiveM et Roblox, mais aussi des sites et des scripts.</p>
+        <p>Joueur de rôleplay depuis douze ans : je sais ce que les joueurs attendent d'un serveur, et ça se ressent dans ce que je code.</p>
       </article>
-      <article class="t s1 r"><span class="lb">Âge</span><b class="num">XX</b><span class="lb">ans</span></article>
-      <article class="t s2 r"><span class="lb">J'utilise</span><b class="num" data-c=".sk">8</b><span class="lb">technologies</span></article>
-      <article class="t s3 r"><span class="lb">Sur GitHub</span><b class="num" data-c=".proj">3</b><span class="lb">projets</span></article>
-      <article class="t s4 r"><span class="lb"><i class="dot"></i> Je cherche</span><b>Stage ou alternance</b><a href="#contact">Me contacter</a></article>
+      <article class="t s1 r"><span class="lb">Âge</span><b class="num" data-n="24">24</b><span class="lb">ans</span></article>
+      <article class="t s2 r"><span class="lb">Développeur depuis</span><b class="num" data-n="10">10</b><span class="lb">ans</span></article>
+      <article class="t s3 r"><span class="lb">Rôleplay depuis</span><b class="num" data-n="12">12</b><span class="lb">ans</span></article>
+      <article class="t s4 r"><span class="lb">Expériences</span><b class="num" data-c=".ex:not(.dim)">7</b><span class="lb">serveurs et studios</span></article>
       <article class="t sx r">
         <h3>Ce que j'utilise</h3>
         <div class="gr">
@@ -270,7 +285,7 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
   <section id="exp">
     <div class="eh">
       <h2 class="r">Expérience</h2>
-      <span class="eb r">Depuis 2020 · 7 collaborations</span>
+      <span class="eb r">7 expériences en vitrine</span>
     </div>
     <div class="eg">
       <div>
@@ -344,6 +359,41 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
         </article>
       </div>
     </div>
+    <div class="tw r"><button class="tgl" aria-expanded="false"><span class="tl">Voir les expériences masquées (3)</span><i>↓</i></button></div>
+    <div class="hid" aria-hidden="true">
+      <div class="hi">
+        <div class="hg">
+        <article class="ex dim">
+          <span class="lg">?</span>
+          <div>
+            <div class="nm"><h4>Projet masqué 1</h4></div>
+            <p class="ro">Rôle à préciser</p>
+            <p>Très peu de temps d'activité.</p>
+            <div class="tg"><span>Peu d'activité</span></div>
+          </div>
+        </article>
+        <article class="ex dim">
+          <span class="lg">?</span>
+          <div>
+            <div class="nm"><h4>Projet masqué 2</h4></div>
+            <p class="ro">Rôle à préciser</p>
+            <p>Une expérience peu concluante.</p>
+            <div class="tg"><span>Peu concluant</span></div>
+          </div>
+        </article>
+        <article class="ex dim">
+          <span class="lg">?</span>
+          <div>
+            <div class="nm"><h4>Projet masqué 3</h4></div>
+            <p class="ro">Rôle à préciser</p>
+            <p>Très peu de temps d'activité.</p>
+            <div class="tg"><span>Peu d'activité</span></div>
+          </div>
+        </article>
+        </div>
+        <p class="oub">…et quelques autres projets dont je ne me souviens plus.</p>
+      </div>
+    </div>
   </section>
 
   <section id="projets">
@@ -392,7 +442,7 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
 <section class="contact" id="contact">
   <div class="w">
     <h2 class="r">On discute ?</h2>
-    <p class="r">Une question, une idée, une offre de stage ? Écris-moi, je réponds vite.</p>
+    <p class="r">Une question, une idée, un projet ? Écris-moi, je réponds vite.</p>
     <div class="liens r">
       <a class="btn" href="mailto:ton.email@exemple.fr">Envoyer un mail</a>
       <a class="btn o" href="https://discord.com/users/ton-id"><img src="img/discord.png" alt="">Discord</a>
@@ -408,9 +458,11 @@ const d=document,h=d.documentElement,rm=matchMedia('(prefers-reduced-motion:redu
 const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');ro.unobserve(x.target)}}),{threshold:.15})
 d.querySelectorAll('.r').forEach(x=>ro.observe(x))
 const co=new IntersectionObserver(e=>e.forEach(x=>{if(!x.isIntersecting)return;co.unobserve(x.target);const el=x.target,n=el.dataset.c?d.querySelectorAll(el.dataset.c).length:+el.dataset.n;el.textContent=n;if(rm||!n)return;const t0=performance.now(),f=t=>{const k=Math.min(1,(t-t0)/1300);el.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}),{threshold:.6})
-d.querySelectorAll('.num[data-c]').forEach(x=>co.observe(x))
+d.querySelectorAll('.num[data-c],.num[data-n]').forEach(x=>co.observe(x))
 const fb=[...d.querySelectorAll('.f')],pj=[...d.querySelectorAll('.proj')]
 fb.forEach(b=>b.addEventListener('click',()=>{fb.forEach(x=>x.setAttribute('aria-pressed',x==b));pj.forEach(c=>{const ok=b.dataset.f=='tout'||c.dataset.c==b.dataset.f;c.hidden=!ok;if(ok){c.style.animation='none';void c.offsetWidth;c.style.animation=''}})}))
+const tg=d.querySelector('.tgl'),hd=d.querySelector('.hid'),nh=hd.querySelectorAll('.ex').length
+tg.addEventListener('click',()=>{const o=hd.classList.toggle('open');tg.setAttribute('aria-expanded',o);hd.setAttribute('aria-hidden',!o);tg.querySelector('.tl').textContent=o?'Masquer les expériences':'Voir les expériences masquées ('+nh+')'})
 const ln=[...d.querySelectorAll('nav a')]
 const so=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)ln.forEach(l=>l.classList.toggle('on',l.hash=='#'+x.target.id))}),{rootMargin:'-45% 0px -50% 0px'})
 d.querySelectorAll('#top,#apropos,#exp,#projets,#contact').forEach(x=>so.observe(x))

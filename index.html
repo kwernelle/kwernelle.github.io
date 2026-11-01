@@ -94,7 +94,8 @@ h1{font-weight:500;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.05;letter-sp
 .ex{display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:start;padding:1.1rem;border:1px solid var(--wh);border-radius:1.75rem;background:var(--gl);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 20px 40px -26px rgba(11,31,74,.4);transition:transform .3s,box-shadow .3s}
 .ex+.ex{margin-top:1rem}
 .ex:hover{transform:translateY(-4px);box-shadow:0 30px 46px -26px rgba(11,31,74,.5)}
-.lg{width:4.6rem;height:4.6rem;border-radius:1.25rem;object-fit:cover;box-shadow:0 12px 20px -8px rgba(11,31,74,.4);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.lg{display:block;width:4.6rem;height:4.6rem;border-radius:1.25rem;overflow:hidden;background:var(--b,#fff);box-shadow:0 12px 20px -8px rgba(11,31,74,.4);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.lg img{display:block;width:100%;height:100%;transform:translateY(var(--y,0)) scale(var(--z,1))}
 .ex:hover .lg{transform:rotate(-5deg) scale(1.08)}
 .nm{display:flex;justify-content:space-between;align-items:flex-start;gap:.75rem}
 .nm h4{font-size:1.2rem;font-weight:800;text-transform:uppercase;line-height:1.15}
@@ -275,7 +276,7 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
       <div>
         <h3 class="ct r">Serveurs de jeu <span>3</span></h3>
         <article class="ex r">
-          <img class="lg" src="img/ryse.webp" alt="Logo Ryse FA">
+          <span class="lg" style="--b:#fff"><img src="img/ryse.webp" alt="Logo Ryse FA" style="--z:1.12"></span>
           <div>
             <div class="nm"><h4>Ryse FA</h4><span class="yr">2026</span></div>
             <p class="ro">Scripteur</p>
@@ -284,7 +285,7 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
           </div>
         </article>
         <article class="ex r">
-          <img class="lg" src="img/slanting.webp" alt="Logo Slanting Studio">
+          <span class="lg" style="--b:#0b1f4a"><img src="img/slanting.webp" alt="Logo Slanting Studio" style="--z:1.3"></span>
           <div>
             <div class="nm"><h4>Slanting Studio</h4><span class="yr">2025</span></div>
             <p class="ro">Administrateur de serveurs et développeur</p>
@@ -294,7 +295,7 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
           </div>
         </article>
         <article class="ex r">
-          <img class="lg" src="img/purple.webp" alt="Logo Purple FA">
+          <span class="lg" style="--b:#000"><img src="img/purple.webp" alt="Logo Purple FA" style="--z:0.8"></span>
           <div>
             <div class="nm"><h4>Purple FA</h4><span class="yr">2024 – 2025</span></div>
             <p class="ro">Développeur</p>
@@ -306,7 +307,7 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
       <div>
         <h3 class="ct r">Roblox <span>4</span></h3>
         <article class="ex r">
-          <img class="lg" src="img/exovolt.webp" alt="Logo Exovolt Studio">
+          <span class="lg" style="--b:#000"><img src="img/exovolt.webp" alt="Logo Exovolt Studio" style="--z:1.25;--y:6%"></span>
           <div>
             <div class="nm"><h4>Exovolt Studio</h4></div>
             <p class="ro">Gérant et développeur</p>
@@ -315,7 +316,7 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
           </div>
         </article>
         <article class="ex r">
-          <img class="lg" src="img/selectia.webp" alt="Logo SelectiaRP">
+          <span class="lg" style="--b:#fff"><img src="img/selectia.webp" alt="Logo SelectiaRP" style="--z:1.05"></span>
           <div>
             <div class="nm"><h4>SelectiaRP</h4><span class="yr">2021</span></div>
             <p class="ro">Level designer</p>
@@ -324,7 +325,7 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
           </div>
         </article>
         <article class="ex r">
-          <img class="lg" src="img/lc.webp" alt="Logo La Ciotat">
+          <span class="lg" style="--b:#fff"><img src="img/lc.webp" alt="Logo La Ciotat" style="--z:0.8"></span>
           <div>
             <div class="nm"><h4>La Ciotat</h4><span class="yr">2020</span></div>
             <p class="ro">Apprenti scripteur</p>
@@ -333,7 +334,7 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
           </div>
         </article>
         <article class="ex r">
-          <img class="lg" src="img/scp.webp" alt="Logo SCP RP Site-68">
+          <span class="lg" style="--b:#fff"><img src="img/scp.webp" alt="Logo SCP RP Site-68" style="--z:0.9;--y:-2%"></span>
           <div>
             <div class="nm"><h4>SCP RP Site-68</h4></div>
             <p class="ro">Tenue maker</p>

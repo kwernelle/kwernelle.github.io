@@ -106,24 +106,11 @@ h1{font-weight:500;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.05;letter-sp
 .ex:nth-child(3){--d:.1s}
 .ex:nth-child(4){--d:.2s}
 .ex:nth-child(5){--d:.3s}
-.tw{display:flex;justify-content:center;margin-top:2.25rem}
-.tgl{font:inherit;font-weight:500;cursor:pointer;border:0;background:var(--dk);color:var(--wh);border-radius:999px;padding:.75rem 1.5rem;display:inline-flex;align-items:center;gap:.7rem;transition:transform .2s,background .2s,color .2s}
-.tgl:hover{background:var(--ac);color:var(--dk);transform:translateY(-2px)}
-.tgl i{font-style:normal;transition:transform .4s}
-.tgl[aria-expanded=true] i{transform:rotate(180deg)}
-.hid{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s cubic-bezier(.2,.7,.2,1)}
-.hid.open{grid-template-rows:1fr}
-.hi{overflow:hidden;min-height:0}
-.hg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;padding-top:1.5rem}
-.hg .ex{margin:0}
-.ex.dim{background:rgba(255,255,255,.35);border:2px dashed rgba(11,31,74,.25);box-shadow:none;opacity:0}
-.hid.open .ex.dim{animation:up .7s cubic-bezier(.2,.7,.2,1) both;opacity:1}
-.hid.open .ex.dim:nth-child(2){animation-delay:.1s}
-.hid.open .ex.dim:nth-child(3){animation-delay:.2s}
-.ex.dim:hover{transform:none;box-shadow:none}
-.ex.dim .lg{display:grid;place-items:center;background:rgba(11,31,74,.08);box-shadow:none;font-size:1.8rem;font-weight:800;color:rgba(11,31,74,.4)}
-.ex.dim:hover .lg{transform:none}
-.oub{margin-top:1rem;text-align:center;font-weight:500;opacity:.75;border:2px dashed rgba(11,31,74,.25);border-radius:1.75rem;padding:1rem 1.5rem}
+.oub{display:flex;align-items:center;gap:1.25rem;margin-top:1.5rem;padding:1.25rem 1.5rem;border:2px dashed rgba(11,31,74,.25);border-radius:1.75rem}
+.oub .lg{flex:none}
+.lg.q{display:grid;place-items:center;background:rgba(11,31,74,.08);box-shadow:none;font-size:1.8rem;font-weight:800;color:rgba(11,31,74,.4)}
+.oub b{display:block;font-size:1.2rem;font-weight:800;text-transform:uppercase;line-height:1.15}
+.oub p{opacity:.8;margin-top:.2rem}
 [hidden]{display:none!important}
 #projets{padding:var(--s) 0}
 .ph{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.25rem}
@@ -259,7 +246,7 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
       <article class="t s1 r"><span class="lb">Âge</span><b class="num" data-n="24">24</b><span class="lb">ans</span></article>
       <article class="t s2 r"><span class="lb">Développeur depuis</span><b class="num" data-n="10">10</b><span class="lb">ans</span></article>
       <article class="t s3 r"><span class="lb">Rôleplay depuis</span><b class="num" data-n="12">12</b><span class="lb">ans</span></article>
-      <article class="t s4 r"><span class="lb">Expériences</span><b class="num" data-c=".ex:not(.dim)">7</b><span class="lb">serveurs et studios</span></article>
+      <article class="t s4 r"><span class="lb">Expériences</span><b class="num" data-c=".ex">7</b><span class="lb">serveurs et studios</span></article>
       <article class="t sx r">
         <h3>Ce que j'utilise</h3>
         <div class="gr">
@@ -285,7 +272,7 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
   <section id="exp">
     <div class="eh">
       <h2 class="r">Expérience</h2>
-      <span class="eb r">7 expériences en vitrine</span>
+      <span class="eb r">7 expériences</span>
     </div>
     <div class="eg">
       <div>
@@ -359,39 +346,11 @@ h1{font-size:clamp(2.2rem,10vw,2.8rem)}
         </article>
       </div>
     </div>
-    <div class="tw r"><button class="tgl" aria-expanded="false"><span class="tl">Voir les expériences masquées (3)</span><i>↓</i></button></div>
-    <div class="hid" aria-hidden="true">
-      <div class="hi">
-        <div class="hg">
-        <article class="ex dim">
-          <span class="lg">?</span>
-          <div>
-            <div class="nm"><h4>Projet masqué 1</h4></div>
-            <p class="ro">Rôle à préciser</p>
-            <p>Très peu de temps d'activité.</p>
-            <div class="tg"><span>Peu d'activité</span></div>
-          </div>
-        </article>
-        <article class="ex dim">
-          <span class="lg">?</span>
-          <div>
-            <div class="nm"><h4>Projet masqué 2</h4></div>
-            <p class="ro">Rôle à préciser</p>
-            <p>Une expérience peu concluante.</p>
-            <div class="tg"><span>Peu concluant</span></div>
-          </div>
-        </article>
-        <article class="ex dim">
-          <span class="lg">?</span>
-          <div>
-            <div class="nm"><h4>Projet masqué 3</h4></div>
-            <p class="ro">Rôle à préciser</p>
-            <p>Très peu de temps d'activité.</p>
-            <div class="tg"><span>Peu d'activité</span></div>
-          </div>
-        </article>
-        </div>
-        <p class="oub">…et quelques autres projets dont je ne me souviens plus.</p>
+    <div class="oub r">
+      <span class="lg q">···</span>
+      <div>
+        <b>Et quelques autres</b>
+        <p>Certaines expériences ne sont pas listées ici : trop courtes, peu concluantes, ou simplement oubliées avec le temps.</p>
       </div>
     </div>
   </section>
@@ -461,8 +420,6 @@ const co=new IntersectionObserver(e=>e.forEach(x=>{if(!x.isIntersecting)return;c
 d.querySelectorAll('.num[data-c],.num[data-n]').forEach(x=>co.observe(x))
 const fb=[...d.querySelectorAll('.f')],pj=[...d.querySelectorAll('.proj')]
 fb.forEach(b=>b.addEventListener('click',()=>{fb.forEach(x=>x.setAttribute('aria-pressed',x==b));pj.forEach(c=>{const ok=b.dataset.f=='tout'||c.dataset.c==b.dataset.f;c.hidden=!ok;if(ok){c.style.animation='none';void c.offsetWidth;c.style.animation=''}})}))
-const tg=d.querySelector('.tgl'),hd=d.querySelector('.hid'),nh=hd.querySelectorAll('.ex').length
-tg.addEventListener('click',()=>{const o=hd.classList.toggle('open');tg.setAttribute('aria-expanded',o);hd.setAttribute('aria-hidden',!o);tg.querySelector('.tl').textContent=o?'Masquer les expériences':'Voir les expériences masquées ('+nh+')'})
 const ln=[...d.querySelectorAll('nav a')]
 const so=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)ln.forEach(l=>l.classList.toggle('on',l.hash=='#'+x.target.id))}),{rootMargin:'-45% 0px -50% 0px'})
 d.querySelectorAll('#top,#apropos,#exp,#projets,#contact').forEach(x=>so.observe(x))
